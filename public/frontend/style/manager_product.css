@@ -1,0 +1,85 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+    list-style: none;
+} 
+header .header{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+.leftmenu{
+    position: fixed;
+    left: 0px;
+    width: 25%;
+    height:100%;
+    background: #1268b3;
+}
+.leftmenu header{
+    text-align: center;
+    line-height: 70px;
+    text-transform: uppercase;
+    background: #007cec;
+    user-select:  none;
+}
+.leftmenu ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(225, 225,225, .1);
+    border-bottom: 1px solid black;
+    transition: .6s;
+}
+ul li:hover a{
+    padding-left: 50px;
+}
+.leftmenu ul a i{
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+ul li ul li {
+    display: none;
+}
+ul li:hover ul li{
+    display: block;
+    font-size: 15px;
+    padding-left: 22px;
+}
+ul li:hover ul li a:hover{
+    padding-left: 65px;  
+}
+header{
+left: 25%;
+background-color: #0099FF;
+height: 100px;
+right: 0;
+}
+
+
+
+.table_product .table_main{
+    width: 120px;
+    margin-top: 50%;
+}
+tr{
+    width: 100px;
+}
+.img_product{
+    width: 100px;
+    height: 70px;
+}
+.text{
+    width: 30px;
+}
