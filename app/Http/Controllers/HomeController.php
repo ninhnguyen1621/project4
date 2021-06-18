@@ -14,7 +14,7 @@ class HomeController extends Controller
 {
     public function HomeProduct()
     {
-        $product=DB::table('products')->paginate(12);
+        $product=DB::table('products')->paginate(5);
      return view('Frontend.index',compact('product'));
     }
     public function detailProduct($id)
@@ -56,30 +56,6 @@ class HomeController extends Controller
     {
         return view('Frontend.Cart.checkout');
     }
-    // public function CheckoutPost(Request $request)
-    // {
-    //     dd($ci=customer::all());
-    //     $customer = new customer();
-    //     $customer->name = $request->name;
-    //     $customer->address = $request->address;
-    //     $customer->email = $request->email;
-    //     $customer->phone = $request->phone;
-    //     $customer->total = Cart::total(0, '', '');
-    //     $customer->state = 0;
-    //     $customer->save();
-    //     foreach (Cart::content() as $product) {
-    //         $order = new order();
-    //         $order->name = $product->name;
-    //         $order->price = $product->price;
-    //         $order->quantity = $product->qty;
-    //         $order->image = $product->options->img;
-    //         $order->customer_id = $customer->id;
-    //         $order->save();
-    //     }
-
-    //     return redirect()->route('index');
-    // }
-    //search_product
     public function search(Request $request)
     {
         $keyword=$request->keywords;//tạo ra 1 key để lưu trữ dữ liệu sau khi submit 1 form
@@ -88,7 +64,7 @@ class HomeController extends Controller
         // dd($search_pr);
         $Cate=DB::table('category')->where('category_status','0')->orderby('id','desc')->get();
         return view('Frontend.Product.search')->with('search_pr',$search_pr)->with('cate',$Cate);
-        
+
 
 
     }
@@ -101,4 +77,7 @@ class HomeController extends Controller
         return view('Frontend.Product.Category.search_value')->with('search_vl',$search_Vl)->with('cate',$Cate);
     }
 
+    //blog region
+
+    //end region
 }

@@ -63,7 +63,7 @@
                                             <div class="tab-content">
                                                 <div role="tabpanel" class="tab-pane fade in active" id="all">
                                                     @foreach ( $search_pr as $key )
-                                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 s-item">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 s-item">
                                                         <div class="single-item">
                                                             <div class="s-product-img">
                                                                <a class="primary-img" href="{{route('detail',['id'=>$key->id])}}"><img src="{{url('/')}}/site/img/products/{{$key->img}}" alt=""></a>

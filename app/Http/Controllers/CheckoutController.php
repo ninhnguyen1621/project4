@@ -97,13 +97,29 @@ class CheckoutController extends Controller
         }
 
         if ( $payment['method']==1) {
-            echo 'u used card to paying';
+            Cart::destroy();
+            echo " hiện tại chưa có phương thức thanh toán atm";
         }
         elseif ( $payment['method']==2) {
             Cart::destroy();
             $Cate=DB::table('category')->where('category_status','0')->orderby('id','desc')->get();
          return view('Frontend.Cart.thanksmes')->with('Cate',$Cate);
         }
+
+    }
+    public function orders()
+    {
+        $all_order=DB::table('order')->join('buyer','order.buyer_id','=','buyer.id')->select('order.*','buyer.name','buyer.phone','buyer.address','buyer.note')->orderBy('order.id','desc')->paginate(4);
+        return view('admin.orders')->with('all_order',$all_order);
+    }
+    public function order_detail($order_id)
+    {
+
+        // $order_by_id=DB::table('order')
+        // ->join('buyer','order.buyer_id','=','buyer.id')
+        // ->join('order_detail','order.id','=','order_detail.order_id')->select('order.*','buyer.*','order_detail.*')->first();
+        $order_by_id =DB::table('order_detail')->where('order_id', $order_id)->get();
+         return view('admin.order_detail')->with('order_by_id',$order_by_id);
 
     }
 

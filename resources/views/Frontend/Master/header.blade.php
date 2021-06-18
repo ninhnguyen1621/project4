@@ -43,7 +43,7 @@
                                  }else{
                                      # code...
                                 ?>
-                               <li><a  href="{{URL::to('/logincheck-out')}}"><i class="fas fa-user"></i>Đăng Nhập</a></li>
+                               <li><a  href="{{URL::to('/logincheck-out')}}"><i class="fas fa-sign-in-alt"></i>Đăng Nhập</a></li>
                                 <?php
                                 }
                                 ?>
@@ -59,7 +59,7 @@
                                     <li class="active"><a href="{{URL::to('/Home')}}"><span>Trang Chủ</span></a>
                                     </li>
                                     <li><a href="{{URL::to('/Home/DanhMuc')}}" class="mega-active">Cửa Hàng</a>
-                                    <li><a href="shop.html">Bài Viết</a></li>
+                                    <li><a href="{{URL::to('/baiviet')}}">Bài Viết</a></li>
                                     <li><a href="shop.html">Liên Hệ</a></li>
 
                                 </ul>

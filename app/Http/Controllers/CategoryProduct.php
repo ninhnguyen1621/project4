@@ -11,13 +11,24 @@ session_start();
 
 class CategoryProduct extends Controller
 {
+    public function authlogin()
+    {
+        $admin_id= session()->get('admin_id');
+        if ($admin_id) {
+            return redirect('/admin/dashboard');
+        }else {
+            return redirect('/admin/login')->send();
+        }
+    }
     public function add_category_product()
     {
+        $this->authlogin();
       return view('admin.add_category_product');
     }
 
     public function all_category_product()
     {
+        $this->authlogin();
         $all_category_product = category::paginate(3);
        return view('admin.all_category_product',compact('all_category_product'));
     }
@@ -33,12 +44,13 @@ class CategoryProduct extends Controller
     }
     public function edit_category_product($id)
     {
+        $this->authlogin();
     $edit_category_product = DB::table('category')->where('id',$id)->get();
     $manager_category_pr=view('admin.edit_category_product')->with('edit_category_product',$edit_category_product);
     return view('admin.admin_Layout')->with('admin.edit_category_product',$manager_category_pr);
     }
     public function update_category_product(Request $request,$id){
-        
+
         $data =array();
         $data['name']=$request->category_product_name;
         $data['category_des']=$request->category_product_des;

@@ -61,7 +61,7 @@
                         </div>
                         <div class="p-content clear">
                             <p class="content">
-                                <br>Mô Tả: {{$product->describe}}<br>
+                                <br>Mô Tả: {!!$product->describe!!}<br>
                             </p>
                         </div>
                         <div class="cart-quantity">

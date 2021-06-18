@@ -114,7 +114,7 @@
                                     <td colspan="4">
                                            {{ csrf_field() }}
                                         <h4 style="    margin-left: 20px;">Hình Thức Thanh Toán</h4>
-                                        <span><label style="  margin-left: 20px"><input  id="check" type="checkbox" required name="payment_op" value="1" size="10 ">
+                                        <span><label style="  margin-left: 20px"><input  id="check" type="checkbox"  name="payment_op" value="1" size="10 ">
                                         </label>Thanh Toán Bằng ATM</span>
                                         <span><label style="   margin-left: 20px"><input type="checkbox" required name="payment_op"  id="check" size="10" value="2"></label>Thanh Toán Sau Khi Nhận Hàng</span>
                                         <div class="button-check">

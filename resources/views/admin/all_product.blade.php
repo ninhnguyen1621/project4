@@ -2,7 +2,7 @@
 @section('admin_content')
     <div class="panel panel-default">
         <div class="panel-heading">
-            Sản Phẩm
+          Quản Lý Sản Phẩm
         </div>
         <div class="row w3-res-tb">
             <div class="col-sm-5 m-b-xs">
@@ -26,7 +26,7 @@ placeholder="Search">
                     <tr>
                         <th style="width:20px;">
                             <label class="i-checks m-b-none">
-                                <input type="checkbox"><i></i>
+
                             </label>
                         </th>
                         <th>Tên Sản Phẩm</th>
@@ -81,5 +81,5 @@ placeholder="Search">
         </footer>
     </div>
     </div>
-    <
+
 @endsection

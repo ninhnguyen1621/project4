@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------------------------
 
-    Template Name: Facon Fashion Responsive HTML5 Template. 
+    Template Name: Facon Fashion Responsive HTML5 Template.
     Template URI: http://bootexperts.com
     Description: This is html5 template
     Author: bootexperts
@@ -8,11 +8,11 @@
     Version: 1.0
 
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
-    
-    1.  Theme default CSS (body, link color, section etc) 
+
+    1.  Theme default CSS (body, link color, section etc)
     2.  Header area Style
     3.  Slider area Style
     4.  Banner area Style
@@ -305,7 +305,7 @@ nav.menu {
 .home2 .top-action-area > li > a {
     color: #fff;
     display: inline-block;
-    font-size: 18px;   
+    font-size: 18px;
 }
 .main-menu-area.home3 {
   float: left;
@@ -651,10 +651,10 @@ span.s-price {
     opacity: 0.5;
     z-index: 7;
     height: 100%;
-    background: blue;    
+    background: blue;
     background: -webkit-linear-gradient(45deg, #1f2a5a, #2f2846);
     background: -o-linear-gradient(45deg, #1f2a5a, #2f2846);
-    background: -moz-linear-gradient(45deg, #1f2a5a, #2f2846);    
+    background: -moz-linear-gradient(45deg, #1f2a5a, #2f2846);
     background: linear-gradient(45deg, #1f2a5a, #2f2846);
 }
 .b-text {
@@ -673,7 +673,7 @@ span.s-price {
     z-index: -3;
 }
 .layear-1-1 h1 {
-    animation: 1000ms ease-in-out 0s normal none 1 running fadeInRight;    
+    animation: 1000ms ease-in-out 0s normal none 1 running fadeInRight;
     color: #fff;
     font-family: "Raleway", sans-serif;
     font-size: 72px;
@@ -683,7 +683,7 @@ span.s-price {
     padding-top: 90px;
 }
 .layear-1-2 h2 {
-    animation: 1000ms ease-in-out 0s normal none 1 running fadeInLeft;    
+    animation: 1000ms ease-in-out 0s normal none 1 running fadeInLeft;
     color: #fff;
     font-family: "Raleway", sans-serif;
     font-size: 30px;
@@ -693,7 +693,7 @@ span.s-price {
     text-transform: uppercase;
 }
 .home4 .layear-1-2 h1 {
-    animation: 1000ms ease-in-out 0s normal none 1 running fadeInLeft;    
+    animation: 1000ms ease-in-out 0s normal none 1 running fadeInLeft;
     color: #fff;
     font-family: "Raleway", sans-serif;
     font-size: 60px;
@@ -2579,7 +2579,6 @@ hr {
 }
 .service-icon ul li {
     display: inline-block;
-    float: left;
     width: 25%;
 }
 .free-shiping a i {
@@ -2731,7 +2730,7 @@ a {
 #scrollUp:hover {
     background: #f48d5a;
 }
-/*=========================== 
+/*===========================
   15. Product Modal styles
 ============================= */
 
@@ -3536,7 +3535,7 @@ button.custom-button {
     font-weight: 700;
     height: 30px;
     line-height: 30px;
-    margin: 0 auto;   
+    margin: 0 auto;
 }
 .chk-method > span {
     background-color: #252525;
@@ -3605,7 +3604,7 @@ button.custom-button {
 .reg {
     padding-bottom: 17px;
 }
-a.continue, 
+a.continue,
 a.login {
   background-color: #3c3c3c;
   border-radius: 3px;
@@ -3694,7 +3693,7 @@ ul.billing li a i {
     color: #000;
     font-family: raleway;
     font-size: 14px;
-    font-weight: 700;    
+    font-weight: 700;
     text-align: left;
     width: 100%;
 }

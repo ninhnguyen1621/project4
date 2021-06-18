@@ -11,30 +11,42 @@ use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller
 {
-    public function all_product()
+    public function authlogin()
     {
+        $admin_id= session()->get('admin_id');
+        if ($admin_id) {
+            return redirect('/admin/dashboard');
+        }else {
+            return redirect('/admin/login')->send();
+        }
+    }
+    public function all_product(Request $request)
+    {
+        //dd($request->session()->put('name', null));
+        $this->authlogin();
         $product = product::paginate(4);
         // $Category = category::all();
         return view('admin.all_product')->with('product',$product);
     }
     public function category()
     {
+        $this->authlogin();
         $Category = category::all();
 
         return view('admin.all_product', compact('product'));
     }
     public function Product()
     {
+        $this->authlogin();
         $category = category::all();
         return view('admin.add_Product', compact('category'));
     }
     public function ProductPost(Request $request)
     {
-        //dd($request->all());
+
         $product = new product();
         $product->name = $request->name;
         $product->price = $request->price;
-        // $product->img;
         $product->origin = $request->origin;
         $product->describe = $request->describe;
         $product->cat_id = $request->cat_id;
@@ -57,6 +69,7 @@ class ProductController extends Controller
     }
     public function edit_product($id)
     {
+        $this->authlogin();
     $cate_edit = DB::table('category')->get();
     $edit_product = DB::table('products')->where('id',$id)->get();
     return view('admin.edit_product')->with('cate_edit' ,$cate_edit)->with('edit_product',$edit_product);
@@ -80,11 +93,28 @@ class ProductController extends Controller
                 $destinationPath = public_path('site\img\products\\');
                 $image->move($destinationPath, $nameImageValue);
                  $data['img'] = $nameImageValue;
-            } else {
-                 $data['img']  = $data['img'];
             }
-            //hàm upload ảnh 100Đ hahaha th nha,dạ vàng
             DB::table('products')->where('id',$id)->update($data);
             return redirect()->route('list');
+
+        //     $vi = product::find($request->hidden);
+        // $vi->name = $request->name;
+        // $vi->price = $request->price;
+        // $vi->origin = $request->origin;
+        // $vi->describe = $request->describe;
+        // $vi->cat_id = $request->cat_id;
+        // if ($request->hasFile('img')) {
+        //     $fileExtension = $request->file('img')->extension();
+        //     $filename = Str::random(5);
+        //     $path = $filename . '.' . $fileExtension;
+        //     $request->file('img')->move('site\img\products', $path);
+        //     $vi->img = 'site\img\products' . $path;
+        //     $vi->save();
+        //     return redirect()->route('Datatables');
+        // } else {
+        //     $vi->img = $vi->img;
+        //     $vi->save();
+        //     return redirect()->route('list');
+        // }
     }
 }

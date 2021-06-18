@@ -64,12 +64,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--sidebar start-->
 <aside>
     <div class="col-md-12 home_style">
-    <p><b>Chào mừng bạn đến trang quản trị website</b></p>
-    @if(isset($_SESSION['admin']) && count($_SESSION['admin']) > 0)
-    <p style="color:blue">
-       Xin chào: {{$_SESSION['admin']}}
-    </p>
-    @endif
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
         <div class="leftside-navigation" id="myDIV">
@@ -102,8 +96,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Sản Phẩm </span>
                     </a>
                 </li>
+                <li class="sub" >
+                    <a  href="{{URL::to('/orders')}}">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>Đơn Hàng </span>
+                    </a>
+                </li>
+                <li class="sub" >
+                    <a  href="{{URL::to('/all-nf')}}">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Bài Viết </span>
+                    </a>
+                </li>
                 <li>
-                    <a href="{{URL::to('admin/login')}}">
+                    <a href="{{route('logn_out')}}">
                         <i class="fa fa-sign-out-alt"></i>
                         <span> Đăng Xuất</span>
                     </a>

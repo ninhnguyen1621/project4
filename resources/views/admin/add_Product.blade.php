@@ -13,27 +13,27 @@
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Tên Sản Phẩm</label>
-                                <input name="name" class="form-control" id="exampleInputEmail1"
+                                <input required name="name" class="form-control" id="exampleInputEmail1"
                                     placeholder="Tên Sản Phẩm">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Gía</label>
-                                <input name="price" class="form-control" id="exampleInputEmail1" placeholder="Gía">
+                                <input required name="price" class="form-control" id="exampleInputEmail1" placeholder="Gía">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Ảnh</label>
                                 <div id="img">
-                                    <input type="file" name="img" multiple="">
+                                    <input required type="file" name="img" multiple="">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Xuất Xứ</label>
                                     <input name="origin" class="form-control" id="exampleInputEmail1"
-                                        placeholder="Xuất Xứ">
+                                      required  placeholder="Xuất Xứ">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Mô Tả </label>
-                                <textarea style="resize:none" rows="5" name="describe" class="form-control"
+                                <textarea required style="resize:none" rows="5" name="describe" class="form-control"
                                     id="mota" placeholder="Mô Tả "></textarea>
                             </div>
                             <div class="form-group">

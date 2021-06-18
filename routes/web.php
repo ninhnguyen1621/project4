@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 
-//checkoutlogin
+//UI
 Route::get('logincheck-out','CheckoutController@checkout_login');
 Route::get('logoutcheck-out','CheckoutController@logout_checkout');
 Route::post('login-cus','CheckoutController@login_cus');
@@ -14,7 +14,7 @@ Route::post('chi-tiet/{id}','HomeController@addCart');
 Route::post('add-customer','CheckoutController@add_customers');
 Route::get('payment','CheckoutController@payment');
 Route::post('order','CheckoutController@order_place')->name('order-place');
-
+//END UI
 
 Route::get('chi-tiet/{id}','HomeController@detailProduct')->name('detail');
 Route::post('chi-tiet/{id}','HomeController@addCart');
@@ -22,31 +22,36 @@ Route::get('gio-hang','HomeController@Cart')->name('cart');
 Route::get('xoa-gio-hang/{id}','HomeController@DelCart')->name('removecart');
 Route::get('updatecart/{rowId}/{qty}', 'HomeController@UpdateCart');
 Route::get('check-out', 'HomeController@Checkout')->name('checkout');
-// Route::post('thanh-toan-post', 'HomeController@CheckoutPost');
+
 //admin
 Route::group(['prefix' => 'admin'], function (){
 Route::get('login','AdminController@login');
-Route::get('logn_out','AdminController@logout_admin');
+Route::get('logn_out','AdminController@logout_admin')->name('logn_out');
 Route::get('dashboard','AdminController@index')->name('dashboard');
 Route::post('/admin-dashboard','AdminController@dashboard')->name('dashboard');
-//category_product
-
-
-
-
-
 });
-
-
-    Route::get('updates', function () {
-        Schema::table('product', function (Blueprint $table) {
-            $table->string('describe')->after('origin');});
-        });
+//END
+    // Route::get('updates', function () {
+    //     Schema::table('product', function (Blueprint $table) {
+    //         $table->string('describe')->after('origin');});
+    //     });
 //Search_Region
 
+//blog
+Route::get('/baiviet','blogController@HomeBlog');
+Route::get('/all-nf','blogController@all_blog');
+Route::get('/ad-new','blogController@add_feed');
+Route::post('save-newfeed', 'blogController@NewPost');
+Route::get('del-new/{id}', 'blogController@del_newfeed');
+Route::get('edit-newfeed/{id}', 'blogController@edit_newfeed');
+Route::post('update-new/{id}', 'blogController@update_newfeed');
+//end
+
+
+
+
+//search method
 Route::get('searching','HomeController@search')->name('search');
-
-
 Route::get('search_value','HomeController@searchValue');
 
 //End-Region
@@ -80,6 +85,9 @@ Route::get('Home','HomeController@HomeProduct');
 //Get Product in cate
 Route::get('danh-muc-san-pham/{id}','CateHomeController@Showlistbyid');
 
+//orders
+Route::get('orders', 'CheckoutController@orders');
+Route::get('order_detail/{order_id}', 'CheckoutController@order_detail');
 
-//login admin
+
 

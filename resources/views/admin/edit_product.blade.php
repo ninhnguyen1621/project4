@@ -25,7 +25,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Ảnh</label>
                                 <div id="img">
-                                    <input type="file" name="img" multiple="">
+                                    <input type="file" name="img">
                                     <img src="{{url('/')}}/site/img/products/{{$item->img}}" height="150" width="150">
                                 </div>
                                 <div class="form-group">

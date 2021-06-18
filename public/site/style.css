@@ -3849,7 +3849,7 @@ span.month {
 }
 .post-title > a {
     color: #3c3c3c;
-    font-family: raleway;
+    font-family: 'FontAwesome';
     font-size: 25px;
     font-weight: 700;
 }
